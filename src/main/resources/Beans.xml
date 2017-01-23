@@ -3,22 +3,22 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
 	
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
 		destroy-method="close">
-		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
-		<property name="url" value="jdbc:oracle:thin:dbdev01.serhstourism.local:1521/DBDEV" />
+		<property name="driverClassName" value="oracle.jdbc.OracleDriver" />
+		<property name="url" value="jdbc:oracle:thin:@dbdev01.serhstourism.local:1521:DBDEV" />
 		<property name="username" value="wsserhs" />
 		<property name="password" value="wsserhsdev" />
 	</bean>
 	
 	<!-- Hibernate 3 Annotation SessionFactory Bean definition-->
-	<bean id="hibernate3AnnotatedSessionFactory"
-		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+	<bean id="hibernate3AnnotatedSessionFactory" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
 		<property name="annotatedClasses">
 			<list>
-				<value>com.touricoHotels.model.Hotel</value>
+				<value>com.touricoHotels.model.VwOlimpusHotel</value>
 			</list>
 		</property>
 		<property name="hibernateProperties">
@@ -30,8 +30,8 @@
 		</property>
 	</bean>
 	
-	<bean id="hotelDao" class="com.touricoHotels.dao">
-		<property name="sessionFactory" ref="hibernate3AnnotatedSessionFactory"/>
+	<bean id="HotelDao" class="com.touricoHotels.dao.HotelDaoImpl">
+		<property name="sessionfactory" ref="hibernate3AnnotatedSessionFactory"/>
 	</bean>
 
 </beans>

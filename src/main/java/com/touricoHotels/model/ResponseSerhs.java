@@ -7,19 +7,19 @@ import java.util.List;
 //@JacksonXmlRootElement(localName="touricoHotels")
 public class ResponseSerhs {
 	
-	private List<Hotel> hotels;
+	private List<VwOlimpusHotel> hotels;
 	
 	public ResponseSerhs(){}
 	
-	public ResponseSerhs(List<Hotel> hotels){
+	public ResponseSerhs(List<VwOlimpusHotel> hotels){
 		this.hotels = hotels;
 	}
 
-	public List<Hotel> getHotels() {
+	public List<VwOlimpusHotel> getHotels() {
 		return hotels;
 	}
 
-	public void setHotels(List<Hotel> hotels) {
+	public void setHotels(List<VwOlimpusHotel> hotels) {
 		this.hotels = hotels;
 	}
 	

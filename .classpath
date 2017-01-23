@@ -90,5 +90,18 @@
 			<attribute name="maven.scope" value="test"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/usuari/Desktop/SumaEntersSolucio/SumaEntersSolucio/lib/ojdbc14.jar"/>
+	<classpathentry kind="con" path="org.eclipse.datatools.connectivity.jdt.DRIVERLIBRARY/Oracle Thin Driver"/>
+	<classpathentry kind="lib" path="C:/Users/usuari/.m2/repository/org/springframework/spring-jdbc/4.3.0.RELEASE/spring-jdbc-4.3.0.RELEASE.jar">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+			<attribute name="org.eclipse.jst.component.archivename" value="spring-jdbc-4.3.0.RELEASE.jar"/>
+			<attribute name="maven.groupId" value="org.springframework"/>
+			<attribute name="maven.artifactId" value="spring-jdbc"/>
+			<attribute name="maven.version" value="4.3.0.RELEASE"/>
+			<attribute name="maven.scope" value="compile"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/SBworkspace/Prac5_WEBDSI_Santi_Jaume/WebContent/WEB-INF/lib/gson-2.6.2.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

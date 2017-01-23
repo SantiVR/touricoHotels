@@ -1,5 +1,8 @@
 package com.touricoHotels.model;
 
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+
+@JacksonXmlRootElement(localName="hotelList")
 public class RequestHotels {
 	
 	private String accommType;
@@ -16,8 +19,5 @@ public class RequestHotels {
 
 	public void setAccommType(String accommType) {
 		this.accommType = accommType;
-	}
-	
-	
-	
+	}	
 }
