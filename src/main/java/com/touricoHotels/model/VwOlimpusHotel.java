@@ -18,30 +18,27 @@ public class VwOlimpusHotel implements Serializable {
 	private String addr;
 
 	@Column(name="CITY_NAME")
-	private BigDecimal cityName;
-
-	@Column(name="COUNTRY_CODE")
-	private String countryCode;
+	private String cityName;
 
 	@Column(name="DEST_CODE")
 	private String destCode;
-
+	
+	@Id
 	@Column(name="HOTEL_ID")
 	private String hotelId;
 
 	@Column(name="HOTEL_NAME")
 	private String hotelName;
 
-	@Column(name="ID_SUPPLIER")
-	private BigDecimal idSupplier;
-
 	private BigDecimal lat;
 
-	private String long_;
+	private BigDecimal long_;
 
 	private String status;
+
+	@Column(name="TH_DEST")
+	private String thDest;
 	
-	@Id
 	@Column(name="TH_HOTEL_ID")
 	private String thHotelId;
 
@@ -56,20 +53,12 @@ public class VwOlimpusHotel implements Serializable {
 		this.addr = addr;
 	}
 
-	public BigDecimal getCityName() {
+	public String getCityName() {
 		return this.cityName;
 	}
 
-	public void setCityName(BigDecimal cityName) {
+	public void setCityName(String cityName) {
 		this.cityName = cityName;
-	}
-
-	public String getCountryCode() {
-		return this.countryCode;
-	}
-
-	public void setCountryCode(String countryCode) {
-		this.countryCode = countryCode;
 	}
 
 	public String getDestCode() {
@@ -96,14 +85,6 @@ public class VwOlimpusHotel implements Serializable {
 		this.hotelName = hotelName;
 	}
 
-	public BigDecimal getIdSupplier() {
-		return this.idSupplier;
-	}
-
-	public void setIdSupplier(BigDecimal idSupplier) {
-		this.idSupplier = idSupplier;
-	}
-
 	public BigDecimal getLat() {
 		return this.lat;
 	}
@@ -112,11 +93,11 @@ public class VwOlimpusHotel implements Serializable {
 		this.lat = lat;
 	}
 
-	public String getLong_() {
+	public BigDecimal getLong_() {
 		return this.long_;
 	}
 
-	public void setLong_(String long_) {
+	public void setLong_(BigDecimal long_) {
 		this.long_ = long_;
 	}
 
@@ -126,6 +107,14 @@ public class VwOlimpusHotel implements Serializable {
 
 	public void setStatus(String status) {
 		this.status = status;
+	}
+
+	public String getThDest() {
+		return this.thDest;
+	}
+
+	public void setThDest(String thDest) {
+		this.thDest = thDest;
 	}
 
 	public String getThHotelId() {

@@ -1,41 +1,30 @@
 package com.touricoHotels.Aplicacion;
 
-import java.sql.SQLException;
 import java.util.List;
 
-import javax.sql.DataSource;
-
-import org.apache.commons.dbcp.BasicDataSource;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.core.env.Environment;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.RestTemplate;
-
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import com.google.gson.Gson;
+import com.touricoHotels.dao.DestinationsDao;
 import com.touricoHotels.dao.HotelDao;
-import com.touricoHotels.model.RequestHotels;
 import com.touricoHotels.model.ResponseSerhs;
+import com.touricoHotels.model.VwOlimpusDestination;
 import com.touricoHotels.model.VwOlimpusHotel;
 
-import oracle.jdbc.pool.OracleDataSource;
 
 @RestController
-@RequestMapping("/downloadHotels")
+//@RequestMapping("/downloadHotels")
 public class ControllerHotelsSerhs {
 
 	@Autowired
 	private Environment env;
-
-	private RestTemplate restTemplate;
 
 	private ResponseSerhs responseSerhs;
 
@@ -48,11 +37,11 @@ public class ControllerHotelsSerhs {
 		this.env = env;
 	}
 
-	@RequestMapping(method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
-	public @ResponseBody String getTouricoHotels(@RequestBody RequestHotels hotels) {
+	@RequestMapping(value="/serhs/olimpus/hotels", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+	public @ResponseBody String getTouricoHotels() {
 
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
-
+		
 		HotelDao hotelDao = context.getBean(HotelDao.class);
 
 		List<VwOlimpusHotel> hotelList = hotelDao.findAllHotels();
@@ -65,12 +54,25 @@ public class ControllerHotelsSerhs {
 			e.printStackTrace();
 		}
 
-		for (VwOlimpusHotel hotel : hotelList) {
-			System.out.println(hotel.toString());
-		}
-
 		context.close();
 
+		return json;
+	}
+	@RequestMapping(value="/serhs/olimpus/destinations", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+	public @ResponseBody String getTouricoDestinations (){
+		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
+		
+		DestinationsDao destinationsDao = context.getBean(DestinationsDao.class);
+		List<VwOlimpusDestination> destinationsList = destinationsDao.findAllDestinations();
+		
+		String json = "";
+		
+		responseSerhs = new ResponseSerhs();
+		responseSerhs.setDestinations(destinationsList);
+		
+		Gson gson = new Gson();
+
+		json = gson.toJson(destinationsList);
 		return json;
 	}
 
@@ -79,9 +81,7 @@ public class ControllerHotelsSerhs {
 		responseSerhs.setHotels(hotelList);
 		
 		Gson gson = new Gson();
-
-		XmlMapper xmlMapper = new XmlMapper();
-		//String xml = xmlMapper.writeValueAsString(responseSerhs);
+		
 		String json = gson.toJson(hotelList);
 		return json;
 	}

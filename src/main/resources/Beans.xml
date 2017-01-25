@@ -19,6 +19,7 @@
 		<property name="annotatedClasses">
 			<list>
 				<value>com.touricoHotels.model.VwOlimpusHotel</value>
+				<value>com.touricoHotels.model.VwOlimpusDestination</value>
 			</list>
 		</property>
 		<property name="hibernateProperties">
@@ -31,6 +32,10 @@
 	</bean>
 	
 	<bean id="HotelDao" class="com.touricoHotels.dao.HotelDaoImpl">
+		<property name="sessionfactory" ref="hibernate3AnnotatedSessionFactory"/>
+	</bean>
+	
+	<bean id="DestinationsDao" class="com.touricoHotels.dao.DestinationsDaoImpl">
 		<property name="sessionfactory" ref="hibernate3AnnotatedSessionFactory"/>
 	</bean>
 
