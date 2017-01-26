@@ -22,9 +22,6 @@ public class VwOlimpusDestination implements Serializable {
 	@Column(name="COUNTRY_CODE")
 	private String countryCode;
 	
-	@Id
-	@Column(name="ID_")
-	private BigDecimal id;
 
 	private BigDecimal lat;
 
@@ -32,7 +29,8 @@ public class VwOlimpusDestination implements Serializable {
 
 	@Column(name="STATE_")
 	private String state;
-
+	
+	@Id
 	@Column(name="TH_CODE")
 	private String thCode;
 
@@ -61,14 +59,6 @@ public class VwOlimpusDestination implements Serializable {
 
 	public void setCountryCode(String countryCode) {
 		this.countryCode = countryCode;
-	}
-
-	public BigDecimal getId() {
-		return this.id;
-	}
-
-	public void setId(BigDecimal id) {
-		this.id = id;
 	}
 
 	public BigDecimal getLat() {

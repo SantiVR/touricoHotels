@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.google.gson.Gson;
 import com.touricoHotels.dao.DestinationsDao;
 import com.touricoHotels.dao.HotelDao;
@@ -20,7 +19,6 @@ import com.touricoHotels.model.VwOlimpusHotel;
 
 
 @RestController
-//@RequestMapping("/downloadHotels")
 public class ControllerHotelsSerhs {
 
 	@Autowired
@@ -33,7 +31,6 @@ public class ControllerHotelsSerhs {
 
 	@Autowired
 	public ControllerHotelsSerhs(Environment env) {
-		// this.restTemplate = restTemplate;
 		this.env = env;
 	}
 
@@ -47,13 +44,13 @@ public class ControllerHotelsSerhs {
 		List<VwOlimpusHotel> hotelList = hotelDao.findAllHotels();
 
 		String json = "";
-		try {
-			json = serializedToXml(hotelList);
-		} catch (JsonProcessingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
+		
+		responseSerhs = new ResponseSerhs();
+		responseSerhs.setHotels(hotelList);
+		
+		Gson gson = new Gson();
+		
+		json = gson.toJson(hotelList);
 		context.close();
 
 		return json;
@@ -73,16 +70,8 @@ public class ControllerHotelsSerhs {
 		Gson gson = new Gson();
 
 		json = gson.toJson(destinationsList);
+		context.close();
 		return json;
 	}
 
-	private String serializedToXml(List<VwOlimpusHotel> hotelList) throws JsonProcessingException {
-		responseSerhs = new ResponseSerhs();
-		responseSerhs.setHotels(hotelList);
-		
-		Gson gson = new Gson();
-		
-		String json = gson.toJson(hotelList);
-		return json;
-	}
 }

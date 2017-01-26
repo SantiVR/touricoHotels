@@ -9,11 +9,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.test.context.ContextConfiguration;
 
 
-
-/**
- * Hello world!
- *
- */
 @SpringBootApplication
 @Configuration
 @ComponentScan(basePackages={"com.touricoHotels"})
