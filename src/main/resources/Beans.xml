@@ -8,9 +8,10 @@
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
 		destroy-method="close">
 		<property name="driverClassName" value="oracle.jdbc.OracleDriver" />
-		<property name="url" value="jdbc:oracle:thin:@dbdev01.serhstourism.local:1521:DBDEV" />
+		<!-- <property name="url" value="jdbc:oracle:thin:@dbdev01.serhstourism.local:1521:DBDEV" /> -->
+		<property name="url" value="jdbc:oracle:thin:@//prod-scan:1521/BDSTPRD" /> 
 		<property name="username" value="wsserhs" />
-		<property name="password" value="wsserhsdev" />
+		<property name="password" value="toad2006" />
 	</bean>
 	
 	<!-- Hibernate 3 Annotation SessionFactory Bean definition-->

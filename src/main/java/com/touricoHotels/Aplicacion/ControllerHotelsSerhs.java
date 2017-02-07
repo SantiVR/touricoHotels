@@ -65,7 +65,7 @@ public class ControllerHotelsSerhs {
 		String json = "";
 		
 		responseSerhs = new ResponseSerhs();
-		responseSerhs.setDestinations(destinationsList);
+		responseSerhs.setDestinations(destinationsList); 
 		
 		Gson gson = new Gson();
 
