@@ -4,9 +4,6 @@ FROM ubuntu:16.04
 # Insatll tomcat https://www.digitalocean.com/community/tutorials/how-to-install-apache-tomcat-8-on-ubuntu-16-04
 #
 
-ENV TOMCAT_ADMIN_USER admin
-ENV TOMCAT_ADMIN_PASSWORD admin
-
 # Upgrade OS image
 RUN apt-get update;apt-get upgrade -y
 
@@ -25,13 +22,6 @@ RUN apt-get install -y oracle-java8-set-default
 
 # Installing maven
 RUN apt-get -y install maven
-
-# Insalling tomcat https://www.linode.com/docs/websites/frameworks/apache-tomcat-on-ubuntu-16-04
-#RUN apt-get -y install tomcat8 tomcat8-docs tomcat8-examples tomcat8-admin
-## Set tomcat admin
-#RUN ls -la /var/lib/tomcat8
-#ENV TOMCAT_ADMIN_CONF="<role rolename="manager-gui"/><role rolename="admin-gui"/><user username="$TOMCAT_ADMIN_USER" password="$TOMCAT_ADMIN_PASSWORD" roles="manager-gui,admin-gui"/>";
-#RUN C=$(echo $TOMCAT_ADMIN_CONF | sed 's/\//\\\//g');sed "/<\/Students>/ s/.*/${C}\n&/" /var/lib/tomcat8/conf/tomcat-users.xml
 
 # Copying source folders
 RUN mkdir -p /src/touricoHotels

@@ -2,6 +2,8 @@ package com.touricoHotels.Aplicacion;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.core.env.Environment;
@@ -23,6 +25,8 @@ public class ControllerHotelsSerhs {
 
 	@Autowired
 	private Environment env;
+	
+	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
 	private ResponseSerhs responseSerhs;
 
@@ -38,6 +42,7 @@ public class ControllerHotelsSerhs {
 	public @ResponseBody String getTouricoHotels() {
 
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
+		logger.info("----Downloading hotels from SerhsDDBB----");
 		
 		HotelDao hotelDao = context.getBean(HotelDao.class);
 
@@ -58,6 +63,7 @@ public class ControllerHotelsSerhs {
 	@RequestMapping(value="/serhs/olimpus/destinations", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 	public @ResponseBody String getTouricoDestinations (){
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
+		logger.info("----Downloading destinations from SerhsDDBB----");
 		
 		DestinationsDao destinationsDao = context.getBean(DestinationsDao.class);
 		List<VwOlimpusDestination> destinationsList = destinationsDao.findAllDestinations();

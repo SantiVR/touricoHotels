@@ -1,0 +1,34 @@
+2017-02-13 18:19:57.160  INFO 11652 --- [main] c.t.App                                  : Starting App on STINF-75-PC with PID 11652 (C:\SBworkspace\touricoHotels\target\classes started by usuari in C:\SBworkspace\touricoHotels)
+2017-02-13 18:19:57.161  INFO 11652 --- [main] c.t.App                                  : No active profile set, falling back to default profiles: default
+2017-02-13 18:19:57.202  INFO 11652 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@1aea049: startup date [Mon Feb 13 18:19:57 CET 2017]; root of context hierarchy
+2017-02-13 18:19:57.852  INFO 11652 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [class org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$c8c9d412] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-02-13 18:19:58.260  INFO 11652 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2017-02-13 18:19:58.268  INFO 11652 --- [main] o.a.c.c.StandardService                  : Starting service Tomcat
+2017-02-13 18:19:58.269  INFO 11652 --- [main] o.a.c.c.StandardEngine                   : Starting Servlet Engine: Apache Tomcat/8.5.9
+2017-02-13 18:19:58.343  INFO 11652 --- [localhost-startStop-1] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2017-02-13 18:19:58.343  INFO 11652 --- [localhost-startStop-1] o.s.w.c.ContextLoader                    : Root WebApplicationContext: initialization completed in 1147 ms
+2017-02-13 18:19:58.456  INFO 11652 --- [localhost-startStop-1] o.s.b.w.s.ServletRegistrationBean        : Mapping servlet: 'dispatcherServlet' to [/]
+2017-02-13 18:19:58.458  INFO 11652 --- [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean         : Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-02-13 18:19:58.458  INFO 11652 --- [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean         : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2017-02-13 18:19:58.458  INFO 11652 --- [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean         : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2017-02-13 18:19:58.458  INFO 11652 --- [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean         : Mapping filter: 'requestContextFilter' to: [/*]
+2017-02-13 18:19:58.687  INFO 11652 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@1aea049: startup date [Mon Feb 13 18:19:57 CET 2017]; root of context hierarchy
+2017-02-13 18:19:58.741  INFO 11652 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/serhs/olimpus/hotels],methods=[GET],produces=[application/json]}" onto public java.lang.String com.touricoHotels.Aplicacion.ControllerHotelsSerhs.getTouricoHotels()
+2017-02-13 18:19:58.741  INFO 11652 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/serhs/olimpus/destinations],methods=[GET],produces=[application/json]}" onto public java.lang.String com.touricoHotels.Aplicacion.ControllerHotelsSerhs.getTouricoDestinations()
+2017-02-13 18:19:58.743  INFO 11652 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-02-13 18:19:58.743  INFO 11652 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-02-13 18:19:58.767  INFO 11652 --- [main] o.s.w.s.h.SimpleUrlHandlerMapping        : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-02-13 18:19:58.767  INFO 11652 --- [main] o.s.w.s.h.SimpleUrlHandlerMapping        : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-02-13 18:19:58.799  INFO 11652 --- [main] o.s.w.s.h.SimpleUrlHandlerMapping        : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-02-13 18:19:59.039  INFO 11652 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2017-02-13 18:19:59.080  INFO 11652 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2017-02-13 18:19:59.083  INFO 11652 --- [main] c.t.App                                  : Started App in 2.298 seconds (JVM running for 2.694)
+2017-02-13 18:20:17.515  INFO 11652 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/]                        : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2017-02-13 18:20:17.515  INFO 11652 --- [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet                : FrameworkServlet 'dispatcherServlet': initialization started
+2017-02-13 18:20:17.528  INFO 11652 --- [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet                : FrameworkServlet 'dispatcherServlet': initialization completed in 13 ms
+2017-02-13 18:20:17.548  INFO 11652 --- [http-nio-8080-exec-1] o.s.c.s.ClassPathXmlApplicationContext   : Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1499378: startup date [Mon Feb 13 18:20:17 CET 2017]; root of context hierarchy
+2017-02-13 18:20:17.550  INFO 11652 --- [http-nio-8080-exec-1] o.s.b.f.x.XmlBeanDefinitionReader        : Loading XML bean definitions from class path resource [Beans.xml]
+2017-02-13 18:20:17.877  INFO 11652 --- [http-nio-8080-exec-1] o.s.o.h.a.AnnotationSessionFactoryBean   : Building new Hibernate SessionFactory
+2017-02-13 18:20:18.463  INFO 11652 --- [http-nio-8080-exec-1] c.t.A.ControllerHotelsSerhs              : ----Downloading destinations from SerhsDDBB----
+2017-02-13 18:20:24.190  INFO 11652 --- [http-nio-8080-exec-1] o.s.c.s.ClassPathXmlApplicationContext   : Closing org.springframework.context.support.ClassPathXmlApplicationContext@1499378: startup date [Mon Feb 13 18:20:17 CET 2017]; root of context hierarchy
+2017-02-13 18:20:24.191  INFO 11652 --- [http-nio-8080-exec-1] o.s.o.h.a.AnnotationSessionFactoryBean   : Closing Hibernate SessionFactory
